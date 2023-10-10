@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FlatList, StyleSheet, Text, View, TouchableOpacity } from "react-native";
-import Icon from "react-native-vector-icons/FontAwesome"; // You can choose any icon library you prefer
+import Icon from "react-native-vector-icons/FontAwesome"; 
 
 export default function Writer() {
   const [artworks, setArtworks] = useState([
@@ -22,17 +22,14 @@ export default function Writer() {
   ]);
 
   const handleShow = (item) => {
-    // Handle the show action here
     alert(`Showing artwork: ${item.title}`);
   };
 
   const handleEdit = (item) => {
-    // Handle the edit action here
     alert(`Editing artwork: ${item.title}`);
   };
 
   const handleDelete = (item) => {
-    // Handle the delete action here
     const updatedArtworks = artworks.filter((artwork) => artwork.id !== item.id);
     setArtworks(updatedArtworks);
   };
