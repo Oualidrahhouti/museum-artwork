@@ -1,22 +1,22 @@
 import React from "react";
 import { Image, ImageBackground, Pressable, StyleSheet, Text, View } from "react-native";
 
-export default function ArtWork() {
+export default function ArtWork({nom, image, dt_creation, auteur}) {
   return (
     <View style={styles.artwork}>
       <ImageBackground
         style={styles.image}
         resizeMode="cover"
         source={{
-          uri: 'https://picsum.photos/600/200',
+          uri: image,
         }}
       >
         <View style={styles.overlay}>
           <View style={styles.dataContainer}>
             <View style={styles.infos}>
-              <Text style={[styles.titleText, styles.text]}>Title here</Text>
-              <Text style={styles.text}>Release Date here</Text>
-              <Text style={styles.text}>Writer here</Text>
+              <Text style={[styles.titleText, styles.text]}>{nom}</Text>
+              <Text style={styles.text}>{dt_creation}</Text>
+              <Text style={styles.text}>{auteur}</Text>
             </View>
             <View style={styles.buttonContainer}>
               <Pressable style={styles.button}>
