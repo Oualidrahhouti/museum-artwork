@@ -8,13 +8,17 @@ import ArtworkDetails from './components/ArtworkDetails';
 import Writer from './components/Writer';
 import UserManagement from './components/UserManagement';
 import AddUser from './components/AddUser';
+import EditUser from './components/EditUser';
+import UserList from './components/UserList';
 
 const Stack=createNativeStackNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Writer">
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name='UserList' component={UserList} />
+        <Stack.Screen name='EditUser' component={EditUser} />
         <Stack.Screen name='AddUser' component={AddUser} />
         <Stack.Screen name="UserManagement" component={UserManagement} />
         <Stack.Screen name="Login" component={Login} />
