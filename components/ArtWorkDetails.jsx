@@ -3,7 +3,7 @@ import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 
 export default function ArtworkDetail({navigation, route}) {
   const artwork=route.params.artwork
-  return (
+    return (
     <ScrollView contentContainerStyle={styles.container}>
       <Image
         style={styles.image}
@@ -14,17 +14,8 @@ export default function ArtworkDetail({navigation, route}) {
       />
       <View style={styles.detailsContainer}>
         <Text style={styles.titleText}>{artwork.nom}</Text>
-        <Text style={styles.releaseDateText}>{artwork.dt_creation}</Text>
-        <Text style={styles.descriptionText}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget
-          nulla vel enim tincidunt fermentum a ut odio. Fusce dignissim quam eu
-          nunc tempus, eu posuere est vestibulum. Praesent vel consectetur erat.
-          Nulla facilisi.
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget
-          nulla vel enim tincidunt fermentum a ut odio. Fusce dignissim quam eu
-          nunc tempus, eu posuere est vestibulum. Praesent vel consectetur erat.
-          Nulla facilisi.
-        </Text>
+        <Text style={styles.releaseDateText}>{artwork}</Text>
+        <Text style={styles.descriptionText}>{artwork.description}</Text>
       </View>
     </ScrollView>
   );
