@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FlatList, StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
 
-export default function UserManagement() {
+export default function UserManagement({navigation}) {
   const [users, setUsers] = useState([
     {
       id: 1,
@@ -12,17 +12,17 @@ export default function UserManagement() {
     {
       id: 2,
       name: "User 2",
-      role: "User",
+      role: "Redacteur",
     },
     {
       id: 3,
       name: "User 3",
-      role: "User",
+      role: "Redacteur",
     },
   ]);
 
   const handleEdit = (user) => {
-    alert(`Editing user: ${user.name}`);
+    navigation.navigate("EditUser", { user });
   };
 
   const handleRemove = (user) => {
@@ -31,7 +31,7 @@ export default function UserManagement() {
   };
 
   const handleAdd = () => {
-    
+    navigation.navigate("AddUser")
   };
 
   const handleRead = (user) => {
