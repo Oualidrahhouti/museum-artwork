@@ -3,8 +3,9 @@ import { ScrollView, View } from "react-native";
 import ArtWork from "./ArtWork";
 import db from '../firebaseConfig';
 import { getDocs, collection } from "firebase/firestore";
+import { TouchableHighlight } from "react-native-web";
 
-export default function Home(){
+export default function Home({navigation}){
 
     const [artWorks, setArtWorks] = useState([]);
     const [updateList, setUpdateList]= useState(false);
@@ -22,13 +23,16 @@ export default function Home(){
     return (
         <ScrollView>
             {artWorks.map((artWork) => (
-                <ArtWork
+                <TouchableHighlight onPress={function(){navigation.navigate("ArtworkDetails",{artwork:artWork})}}>
+                    <ArtWork
                  key={artWork.id}
                  image={artWork.image}
                  nom={artWork.nom}
                  dt_creation={artWork.dt_creation}
                  auteur={artWork.auteur}
                  />
+                </TouchableHighlight>
+                
             ))}
         </ScrollView>
     )

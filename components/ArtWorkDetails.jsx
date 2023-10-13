@@ -1,19 +1,20 @@
 import React from "react";
 import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 
-export default function ArtworkDetail() {
+export default function ArtworkDetail({navigation, route}) {
+  const artwork=route.params.artwork
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Image
         style={styles.image}
         resizeMode="cover"
         source={{
-          uri: 'https://picsum.photos/600/400'
+          uri: artwork.image 
         }}
       />
       <View style={styles.detailsContainer}>
-        <Text style={styles.titleText}>Artwork Title</Text>
-        <Text style={styles.releaseDateText}>Release Date: August 10, 2023</Text>
+        <Text style={styles.titleText}>{artwork.nom}</Text>
+        <Text style={styles.releaseDateText}>{artwork.dt_creation}</Text>
         <Text style={styles.descriptionText}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla eget
           nulla vel enim tincidunt fermentum a ut odio. Fusce dignissim quam eu

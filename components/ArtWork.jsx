@@ -18,11 +18,6 @@ export default function ArtWork({nom, image, dt_creation, auteur}) {
               <Text style={styles.text}>{dt_creation}</Text>
               <Text style={styles.text}>{auteur}</Text>
             </View>
-            <View style={styles.buttonContainer}>
-              <Pressable style={styles.button}>
-                <Text style={styles.buttonText}>Details</Text>
-              </Pressable>
-            </View>
           </View>
         </View>
       </ImageBackground>
